@@ -1,4 +1,4 @@
-/* Base Reset */
+/* ===== Reset & Base Styles ===== */
 * {
   margin: 0;
   padding: 0;
@@ -7,59 +7,62 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fdfdfd;
+  background-color: #fefefe;
   color: #333;
   line-height: 1.6;
 }
 
-/* Hero Section */
+/* ===== Header (Hero) ===== */
 .hero {
-  background: url('img4.jpeg') no-repeat center center/cover;
-  height: 100vh;
+  background-image: url('img4.jpeg'); /* Replace or set correctly */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  text-align: center;
   color: white;
+  text-align: center;
 }
 
-.hero .overlay {
-  background: rgba(0, 0, 0, 0.5);
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 2rem;
-  border-radius: 12px;
+  width: 100%;
 }
 
-.hero h1 {
+.overlay h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
-.hero p {
+.overlay p {
   font-size: 1.2rem;
 }
 
-/* Section Titles */
-section h2 {
-  text-align: center;
-  margin: 2rem 0 1rem;
-  color: #006994;
-  font-size: 2rem;
+/* ===== Sections ===== */
+section {
+  padding: 3rem 1rem;
 }
 
-/* Destinations */
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1976d2;
+}
+
+/* ===== Gallery (Destinations) ===== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  padding: 0 1rem;
-  margin-bottom: 2rem;
 }
 
 .card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
 }
@@ -70,119 +73,146 @@ section h2 {
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
 .card h3 {
+  font-size: 1.3rem;
   margin: 0.75rem;
-  color: #333;
 }
 
 .card p {
-  padding: 0 0.75rem 1rem;
-  color: #666;
+  font-size: 1rem;
+  margin: 0 0.75rem 1rem;
+  color: #555;
 }
 
-/* Tips */
+/* ===== Tips Section ===== */
 .tips {
+  list-style: none;
   max-width: 600px;
   margin: auto;
-  padding: 0 1rem 2rem;
+  padding: 0;
 }
 
 .tips li {
-  background: #e0f7fa;
-  margin: 0.5rem 0;
+  background: #e3f2fd;
   padding: 0.75rem 1rem;
-  border-left: 4px solid #00acc1;
-  border-radius: 5px;
-  list-style: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-/* Blog Posts */
+/* ===== Blog Section ===== */
 .blog-posts {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 0 1rem 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .post {
-  background: #fffbe7;
-  border-left: 5px solid #fbc02d;
+  background: #fff3e0;
   padding: 1rem;
-  max-width: 300px;
-  border-radius: 6px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
 }
 
 .post h3 {
+  color: #ff6f00;
   margin-bottom: 0.5rem;
 }
 
-/* Newsletter */
+.post p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* ===== Newsletter Section ===== */
 #newsletter {
-  background: #f0f8ff;
-  padding: 2rem 1rem;
   text-align: center;
+  background: #e8f5e9;
+  padding: 2rem 1rem;
+  border-radius: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
   max-width: 400px;
   margin: auto;
 }
 
-input[type="email"] {
-  width: 100%;
+form input {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
 }
 
-button[type="submit"] {
-  padding: 0.75rem 2rem;
-  background-color: #006994;
+form button {
+  padding: 0.75rem;
+  background: #388e3c;
   color: white;
   border: none;
   border-radius: 6px;
-  cursor: pointer;
   font-size: 1rem;
-  transition: background 0.3s ease;
+  cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #004d6d;
+form button:hover {
+  background: #2e7d32;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
-  background: #006994;
-  color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 2rem 1rem;
+  background: #f1f1f1;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  color: #555;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .hero h1 {
+/* ===== Responsive Fixes for Small Devices ===== */
+@media (max-width: 480px) {
+  .overlay h1 {
     font-size: 2rem;
   }
 
-  .hero p {
+  .overlay p {
     font-size: 1rem;
   }
 
-  .post, .card {
-    max-width: 100%;
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .tips li {
+    font-size: 0.95rem;
+  }
+
+  .post h3 {
+    font-size: 1.1rem;
+  }
+
+  .post p {
+    font-size: 0.95rem;
+  }
+
+  form input,
+  form button {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.75rem;
   }
 }
-
-
